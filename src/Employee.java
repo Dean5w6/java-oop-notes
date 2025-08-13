@@ -9,6 +9,6 @@ public class Employee extends Person {
     @Override
     public void introduce() {
         super.introduce();
-        System.out.println(". my job title is " + this.jobTitle);
+        System.out.println(". My job title is " + this.jobTitle);
     }
 }
