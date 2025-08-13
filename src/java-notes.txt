@@ -26,3 +26,41 @@ public class Car extends Vehicle {
         System.out.println("The " + this.modelName + " goes beep beep!");
     }
 }
+
+Polymorphism
+The word "polymorphism" comes from Greek and literally means "many forms."
+In programming, it's the ability of an object, a method, or a variable to take on many different forms.
+In practice, it means you can have a single variable of a parent type that can refer to objects of its different child types.
+
+Polymorphism is the principle that allows our Animal interface from before to work so well. It let us treat a Dog and a
+Cat as just an Animal.
+
+It works the exact same way with inheritance. We can create different subclasses of Vehicle and then treat them all as
+just a Vehicle.
+
+This time, we'll add a Bicycle class that also extends Vehicle.
+
+// In Bicycle.java
+public class Bicycle extends Vehicle {
+    // Override the honk method for Bicycle
+    @Override
+    public void honk() {
+        System.out.println("Ring ring!");
+    }
+}
+
+Now, in main, we can create an array of Vehicles that holds both a Car object and a Bicycle object.
+// In Main.java
+public class Main {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car();         // A Vehicle variable holding a Car object
+        Vehicle myBicycle = new Bicycle(); // A Vehicle variable holding a Bicycle object
+
+        Vehicle[] myVehicles = {myCar, myBicycle};
+
+        for (Vehicle v : myVehicles) {
+            // Java automatically calls the correct honk() method for each object
+            v.honk();
+        }
+    }
+}

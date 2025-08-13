@@ -4,16 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.printf("Type your name: ");
-        String employeeName = scanner.nextLine();
+        Vehicle myCar = new Car();
+        Vehicle myBicycle = new Bicycle();
 
-        System.out.printf("Type your job title: ");
-        String employeeJobTitle = scanner.nextLine();
+        Vehicle[] myVehicles = {myCar, myBicycle};
 
-        Employee employee = new Employee(employeeName, employeeJobTitle);
-
-        System.out.println("\n");
-
-        employee.introduce();
+        for (Vehicle currentVehicle : myVehicles) {
+            currentVehicle.honk();
+        }
     }
 }
