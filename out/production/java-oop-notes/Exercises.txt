@@ -1,0 +1,80 @@
+Polymorphism exercise - getting the area of two Shapes (Circle and Rectangle)
+public interface Shape {
+    double getArea();
+    double getPerimeter();
+    String getName();
+}
+
+
+public class Circle implements Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea() {
+        double area;
+        area = Math.PI * (this.radius * this.radius);
+        return area;
+    }
+
+    @Override
+    public double getPerimeter() {
+        double perimeter;
+        perimeter = 2 * Math.PI * this.radius;
+        return perimeter;
+    }
+
+    @Override
+    public String getName() {
+        return "circle";
+    }
+}
+
+public class Rectangle implements Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double getArea() {
+        double area;
+
+        area = this.width * this.height;
+        return area;
+    }
+
+    @Override
+    public double getPerimeter() {
+        double perimeter;
+
+        perimeter = 2 * (this.width + this.height);
+        return perimeter;
+    }
+
+    @Override
+    public String getName() {
+        return "rectangle";
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle(6);
+        Shape rectangle = new Rectangle(8, 6);
+
+        Shape[] shapes = {circle, rectangle};
+
+        for (Shape currentShape : shapes) {
+            System.out.printf("Area of " + currentShape.getName() + ": " + currentShape.getArea() + "\n");
+        }
+    }
+}
