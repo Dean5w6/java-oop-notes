@@ -121,3 +121,69 @@ try {
 } catch (ExceptionType name) {
     // Code to run if that specific exception happens
 }
+
+GUI
+import javax.swing.*; // Import the Swing library
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Create the window (the JFrame)
+        JFrame frame = new JFrame("My First GUI");
+
+        // 2. Create a component (a JLabel)
+        JLabel label = new JLabel("Hello, World!");
+
+        // 3. Add the component to the window
+        frame.add(label);
+
+        // 4. Set the window's properties and display it
+        frame.setSize(300, 200); // Set size in pixels (width, height)
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Exit the app when the window closes
+        frame.setVisible(true); // Make the window visible
+    }
+}
+
+Swing commands:
+JOptionPane	Dialog Box	A simple way to show pop-up messages or get user input.
+
+JFrame	Window	The main window container for an application.
+
+JLabel	Component	A non-editable component used to display text or images.
+
+JTextField	Component	A text box that allows the user to type in a single line of text.
+
+JButton	Component	A standard button that the user can click to trigger an action.
+
+ActionListener	Event Handling	An interface (a contract) for "listening" to button clicks.
+
+ActionEvent	Event Handling	The event object that is created when a button is clicked.
+
+JOptionPane usage
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        JOptionPane.showMessageDialog(null, "Hello, this is a graphical message!");
+    }
+}
+
+showInputDialog of JOptionPane
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import javax.swing.*;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String name = JOptionPane.showInputDialog("What is your name?");
+
+        String message = String.format("Welcome, %s, to Java Programming!", name);
+
+        JOptionPane.showMessageDialog(null, message);
+    }
+}
+
