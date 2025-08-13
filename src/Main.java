@@ -2,15 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Shape circle = new Circle(6);
+        Shape rectangle = new Rectangle(8, 6);
 
-        Vehicle myCar = new Car();
-        Vehicle myBicycle = new Bicycle();
+        Shape[] shapes = {circle, rectangle};
 
-        Vehicle[] myVehicles = {myCar, myBicycle};
-
-        for (Vehicle currentVehicle : myVehicles) {
-            currentVehicle.honk();
+        for (Shape currentShape : shapes) {
+            System.out.printf("Area of " + currentShape.getName() + ": " + currentShape.getArea() + "\n");
         }
     }
 }

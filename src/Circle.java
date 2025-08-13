@@ -18,4 +18,9 @@ public class Circle implements Shape {
         perimeter = 2 * Math.PI * this.radius;
         return perimeter;
     }
+
+    @Override
+    public String getName() {
+        return "circle";
+    }
 }

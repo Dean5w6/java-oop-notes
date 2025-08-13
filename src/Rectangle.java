@@ -22,4 +22,9 @@ public class Rectangle implements Shape {
         perimeter = 2 * (this.width + this.height);
         return perimeter;
     }
+
+    @Override
+    public String getName() {
+        return "rectangle";
+    }
 }
