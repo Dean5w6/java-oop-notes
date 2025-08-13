@@ -9,9 +9,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String name = JOptionPane.showInputDialog("What is your name?");
+        String fNum = JOptionPane.showInputDialog("Enter the first number: ");
+        int firstNumber = Integer.parseInt(fNum);
 
-        String message = String.format("Welcome, %s, to Java Programming!", name);
+        String sNum = JOptionPane.showInputDialog("Enter the second number: ");
+        int secondNumber = Integer.parseInt(sNum);
+
+        int result = firstNumber + secondNumber;
+
+        String message = String.format("The sum of %d and %d is %d", firstNumber, secondNumber, result);
 
         JOptionPane.showMessageDialog(null, message);
     }

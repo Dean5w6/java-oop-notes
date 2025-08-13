@@ -187,3 +187,7 @@ public class Main {
     }
 }
 
+When using String.format():
+%d is used for decimal (integer) values
+%f is for floating-point numbers
+%s is for string values
