@@ -7,18 +7,25 @@ import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        JFrame frame = new JFrame("Interactive GUI");
+        JLabel label = new JLabel("Press the button.");
+        JButton button = new JButton("Click Me");
 
-        String fNum = JOptionPane.showInputDialog("Enter the first number: ");
-        int firstNumber = Integer.parseInt(fNum);
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                label.setText("Button was clicked!");
+            }
+        };
 
-        String sNum = JOptionPane.showInputDialog("Enter the second number: ");
-        int secondNumber = Integer.parseInt(sNum);
+        button.addActionListener(listener);
 
-        int result = firstNumber + secondNumber;
+        frame.setLayout(new FlowLayout());
+        frame.add(label);
+        frame.add(button);
 
-        String message = String.format("The sum of %d and %d is %d", firstNumber, secondNumber, result);
-
-        JOptionPane.showMessageDialog(null, message);
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
