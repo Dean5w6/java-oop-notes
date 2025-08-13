@@ -1,0 +1,28 @@
+public class Vehicle {
+    protected String brand = "Ford";
+
+    public void honk() {
+        System.out.println("Tuut, tuut!");
+    }
+}
+
+
+Overriding Methods
+What if a subclass wants to provide its own specific version of an inherited method? This is called method overriding.
+
+We can also use the super keyword to call the parent's version of the method from within the child's method.
+
+// In Car.java
+public class Car extends Vehicle {
+    private String modelName = "Mustang";
+
+    public String getModelName() {
+        return this.modelName;
+    }
+
+    @Override
+    public void honk() {
+        super.honk(); // This calls the original "Tuut, tuut!" from the Vehicle class
+        System.out.println("The " + this.modelName + " goes beep beep!");
+    }
+}
