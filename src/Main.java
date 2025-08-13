@@ -4,11 +4,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Car myCar = new Car();
+        Employee employee = new Employee();
 
-        myCar.honk();
+        System.out.printf("Type your name: ");
+        String employeeName = scanner.nextLine();
+        employee.name = employeeName;
 
-        System.out.println("Brand: " + myCar.brand);
-        System.out.println("Model: " + myCar.getModelName());
+        System.out.printf("Type your job title: ");
+        String employeeJobTitle = scanner.nextLine();
+        employee.setJobTitle(employeeJobTitle);
+
+        System.out.println("\n");
+        employee.introduce();
     }
 }
