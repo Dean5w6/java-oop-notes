@@ -214,3 +214,6 @@ public class Main {
 }
 
 Collections (ArrayList) - Resizable array
+
+Constructors
+    - Their main job is to initialize the instance variables to ensure the object starts in a valid state.
