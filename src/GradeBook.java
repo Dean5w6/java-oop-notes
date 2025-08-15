@@ -1,5 +1,15 @@
 public class GradeBook {
-    public void displayMessage(String courseName) {
-        System.out.println("Welcome to the grade book for " + courseName + "!");
+    private String courseName;
+
+    public void setCourseName(String newCourseName) {
+        courseName = newCourseName;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void displayMessage() {
+        System.out.println("Welcome to the grade book for " + getCourseName() + "!");
     }
 }
