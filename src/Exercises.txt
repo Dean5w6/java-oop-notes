@@ -190,3 +190,6 @@ public class Main {
         } while(!action.equals("quit"));
     }
 }
+
+GradeBook class that takes no arguments and prints "Welcome to the Grade Book!" to the console
+can be found on GradeBook.java and GradeBookTest.java
