@@ -259,3 +259,6 @@ public class GradeBookTest {
         gradeBook.displayMessage();
     }
 }
+
+In Java, you can calculate powers using the Math.pow() method. For example, Math.pow(2, 3)
+would calculate 2 to the power of 3, which is 8.
