@@ -19,35 +19,35 @@ public class GradeBook {
 
     public void determineClassAverage() {
         Scanner scanner = new Scanner(System.in);
-        double total = 0, grade = 0.0;
-        int units = 0, totalUnits = 0;
+        double total = 0;
+        int totalUnits = 0;
+        int gradeCounter = 0;
 
-        while (true) {
-            System.out.printf("Enter a grade (Type '0' to end): ");
-            grade = scanner.nextDouble();
-            if (grade < 1.0) {
-                System.out.println("Invalid grade.");
-                grade = 0.0;
-            }
+        System.out.print("Enter a grade (Type 0 or less to end): ");
+        double grade = scanner.nextDouble();
 
-            System.out.printf("Enter the number of units for that grade (Type '0' to end): ");
-            units = scanner.nextInt();
-            if (units < 1) {
-                System.out.println("Invalid units.");
-                units = 0;
-            }
+        while (grade > 0) {
+            System.out.print("Enter the number of units for that grade: ");
+            int units = scanner.nextInt();
 
-            if (grade >= 1.0 && units >= 1) {
+            if (units > 0) {
                 totalUnits += units;
                 total += (grade * units);
-            } else if (grade < 1.0 || units < 1) {
-                break;
+                gradeCounter++;
+            } else {
+                System.out.println("Invalid units. Entry skipped.");
             }
+
+            System.out.print("\nEnter a grade (Type 0 or less to end): ");
+            grade = scanner.nextDouble();
         }
 
-        double GPA = (total / totalUnits);
-        System.out.println("\nTotal grades: " + total + "\nTotal units: " + totalUnits);
-        System.out.println("Your GPA is: " + GPA);
+        if (gradeCounter > 0) {
+            double GPA = total / totalUnits;
+            System.out.printf("\nYour GPA is: %.2f\n", GPA);
+        } else {
+            System.out.println("\nNo valid grades were entered.");
+        }
     }
 
     public void displayMessage() {
