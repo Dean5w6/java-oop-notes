@@ -193,3 +193,6 @@ public class Main {
 
 GradeBook class that takes no arguments and prints "Welcome to the Grade Book!" to the console
 can be found on GradeBook.java and GradeBookTest.java
+
+Exercise: create an Account class that uses a constructor to validate an initial balance,
+ensuring it's not negative; can be found on Account.java and AccountTest.java
