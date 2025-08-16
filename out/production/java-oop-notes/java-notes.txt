@@ -217,3 +217,45 @@ Collections (ArrayList) - Resizable array
 
 Constructors
     - Their main job is to initialize the instance variables to ensure the object starts in a valid state.
+
+With constructor:
+public class GradeBook {
+    private String courseName;
+
+    // This is the constructor
+    public GradeBook(String name) {
+        courseName = name;
+    }
+    // End of the constructor
+
+    public void setCourseName(String newCourseName) {
+        courseName = newCourseName;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void displayMessage() {
+        System.out.println("Welcome to the grade book for " + getCourseName() + "!");
+    }
+}
+
+import java.util.Scanner;
+
+public class GradeBookTest {
+    public static void main(String[] args) {
+        // Forces you to initialize the courseName due to the constructor
+        GradeBook gradeBook = new GradeBook("Object-oriented Programming");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Initial course name is: " + gradeBook.getCourseName());
+        // would return "null" without the constructor
+
+        System.out.printf("Enter the course name: ");
+        String newCourseName = scanner.nextLine();
+
+        gradeBook.setCourseName(newCourseName);
+        gradeBook.displayMessage();
+    }
+}
